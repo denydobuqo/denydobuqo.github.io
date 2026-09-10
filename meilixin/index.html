@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>美丽新世界-反乌托邦经典解读与阅读指南</title>
+<meta name="description" content="美丽新世界是阿道司·赫胥黎的反乌托邦经典。本页梳理作品设定、核心概念、人物脉络、思想主题与阅读方法，帮助读者理解这部关于科技、消费与自由的警示之作。">
+<meta name="keywords" content="美丽新世界,反乌托邦,赫胥黎,乌托邦文学,经典文学解读,美丽新世界阅读指南">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+  :root{
+    --ink:#16202b;
+    --ink-soft:#41505f;
+    --paper:#f5f3ee;
+    --paper-2:#ffffff;
+    --line:#dcd7cd;
+    --accent:#1f6f6b;
+    --accent-2:#c25b3a;
+    --gold:#b08a3e;
+    --radius:14px;
+    --shadow:0 10px 30px rgba(22,32,43,.08);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:"Noto Serif SC","Songti SC","Source Han Serif SC",Georgia,"Microsoft YaHei",serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;}
+  .wrap{width:min(1160px,92vw);margin:0 auto;}
+
+  /* ---------- 顶部 ---------- */
+  .topbar{
+    background:var(--ink);
+    color:#e8e4dc;
+    font-size:.82rem;
+    letter-spacing:.04em;
+  }
+  .topbar .wrap{
+    display:flex;justify-content:space-between;align-items:center;
+    gap:12px;padding:8px 0;flex-wrap:wrap;
+  }
+  .topbar span{opacity:.85;}
+  .topbar .tag{
+    border:1px solid rgba(255,255,255,.28);
+    border-radius:999px;padding:2px 10px;opacity:.9;
+  }
+
+  header.site{
+    background:linear-gradient(160deg,#1c2a35 0%,#22333f 55%,#1a2b30 100%);
+    color:#f2efe9;
+    border-bottom:3px solid var(--gold);
+  }
+  .head-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:24px;padding:22px 0 18px;flex-wrap:wrap;
+  }
+  .brand{display:flex;align-items:center;gap:14px;}
+  .brand-mark{
+    width:52px;height:52px;flex:none;border-radius:50%;
+    background:radial-gradient(circle at 32% 30%,#e7d9b5,#b08a3e 62%,#7d5f24);
+    display:grid;place-items:center;
+    font-size:1.35rem;color:#1c2a35;font-weight:700;
+    box-shadow:0 0 0 4px rgba(176,138,62,.18);
+  }
+  .brand h1{
+    font-size:1.5rem;margin:0;letter-spacing:.06em;font-weight:700;
+  }
+  .brand p{
+    margin:2px 0 0;font-size:.8rem;letter-spacing:.22em;
+    color:#a9bcbf;text-transform:uppercase;
+  }
+  nav.mainnav ul{
+    list-style:none;display:flex;gap:6px;margin:0;padding:0;flex-wrap:wrap;
+  }
+  nav.mainnav a{
+    display:block;padding:8px 14px;border-radius:999px;
+    font-size:.9rem;color:#d9e2e2;transition:.25s;
+  }
+  nav.mainnav a:hover,nav.mainnav a:focus{
+    background:rgba(255,255,255,.1);color:#fff;
+  }
+
+  /* ---------- 首屏 ---------- */
+  .hero{
+    background:
+      radial-gradient(900px 340px at 88% -10%,rgba(31,111,107,.22),transparent 70%),
+      linear-gradient(180deg,#22333f,#1b2831);
+    color:#eee9e0;
+    padding:56px 0 64px;
+    position:relative;overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:auto 0 0 0;height:70px;
+    background:linear-gradient(180deg,transparent,var(--paper));
+    pointer-events:none;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.35fr .95fr;gap:48px;align-items:start;
+    position:relative;z-index:1;
+  }
+  .hero .kicker{
+    display:inline-block;font-size:.78rem;letter-spacing:.3em;
+    color:var(--gold);border-bottom:1px solid rgba(176,138,62,.5);
+    padding-bottom:6px;margin-bottom:20px;
+  }
+  .hero h2{
+    font-size:clamp(1.7rem,3.6vw,2.6rem);
+    line-height:1.4;margin:0 0 18px;font-weight:700;letter-spacing:.02em;
+  }
+  .hero h2 em{
+    font-style:normal;color:#e2c98a;border-bottom:2px solid rgba(226,201,138,.4);
+  }
+  .hero p.lead{
+    font-size:1rem;color:#c8d3d3;margin:0 0 26px;max-width:56ch;
+  }
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;padding:12px 26px;border-radius:999px;
+    font-size:.92rem;letter-spacing:.06em;transition:.25s;border:1px solid transparent;
+  }
+  .btn-primary{background:var(--accent);color:#fff;}
+  .btn-primary:hover{background:#1a5c58;}
+  .btn-ghost{border-color:rgba(255,255,255,.35);color:#e8e4dc;}
+  .btn-ghost:hover{background:rgba(255,255,255,.1);}
+
+  .hero-card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:var(--radius);
+    padding:26px 24px;
+    backdrop-filter:blur(2px);
+  }
+  .hero-card h3{
+    margin:0 0 16px;font-size:.92rem;letter-spacing:.2em;
+    color:#a9bcbf;font-weight:600;
+  }
+  .factlist{list-style:none;margin:0;padding:0;}
+  .factlist li{
+    display:flex;gap:12px;padding:11px 0;
+    border-bottom:1px dashed rgba(255,255,255,.16);
+    font-size:.9rem;
+  }
+  .factlist li:last-child{border-bottom:0;}
+  .factlist b{
+    flex:none;width:76px;color:var(--gold);font-weight:600;
+  }
+  .factlist span{color:#d5dede;}
+
+  /* ---------- 通用区块 ---------- */
+  section{padding:64px 0;}
+  .sec-head{margin-bottom:34px;max-width:70ch;}
+  .sec-head .eyebrow{
+    font-size:.76rem;letter-spacing:.28em;color:var(--accent);
+    text-transform:uppercase;display:block;margin-bottom:10px;
+  }
+  .sec-head h3{
+    font-size:clamp(1.3rem,2.4vw,1.75rem);margin:0 0 12px;font-weight:700;
+  }
+  .sec-head p{margin:0;color:var(--ink-soft);font-size:.95rem;}
+
+  /* 设定解读 */
+  .concept-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;
+  }
+  .concept{
+    background:var(--paper-2);border:1px solid var(--line);
+    border-radius:var(--radius);padding:26px 24px;
+    box-shadow:var(--shadow);transition:.28s;
+    border-top:3px solid var(--accent);
+  }
+  .concept:hover{transform:translateY(-4px);}
+  .concept .num{
+    font-size:.78rem;letter-spacing:.2em;color:var(--accent-2);font-weight:700;
+  }
+  .concept h4{margin:10px 0 10px;font-size:1.08rem;}
+  .concept p{margin:0;font-size:.9rem;color:var(--ink-soft);}
+
+  /* 人物 */
+  .people{background:#ece8e0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .people-list{display:grid;gap:18px;}
+  .person{
+    display:grid;grid-template-columns:150px 1fr;gap:22px;
+    background:var(--paper-2);border:1px solid var(--line);
+    border-radius:var(--radius);padding:22px 24px;
+  }
+  .person .who{
+    border-right:1px solid var(--line);padding-right:18px;
+  }
+  .person .who strong{display:block;font-size:1.02rem;}
+  .person .who small{color:var(--accent);font-size:.78rem;letter-spacing:.1em;}
+  .person p{margin:0;font-size:.9rem;color:var(--ink-soft);}
+
+  /* 主题 */
+  .theme-wrap{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start;}
+  .theme-list{list-style:none;margin:0;padding:0;counter-reset:t;}
+  .theme-list li{
+    counter-increment:t;position:relative;padding:16px 0 16px 54px;
+    border-bottom:1px solid var(--line);
+  }
+  .theme-list li::before{
+    content:counter(t,decimal-leading-zero);
+    position:absolute;left:0;top:16px;
+    font-size:.9rem;font-weight:700;color:var(--accent-2);
+    letter-spacing:.06em;
+  }
+  .theme-list strong{display:block;font-size:1rem;margin-bottom:4px;}
+  .theme-list span{font-size:.88rem;color:var(--ink-soft);}
+  .quote-box{
+    background:#1c2a35;color:#e6e1d8;border-radius:var(--radius);
+    padding:32px 30px;position:relative;overflow:hidden;
+  }
+  .quote-box::before{
+    content:"“";position:absolute;top:-18px;left:14px;
+    font-size:7rem;color:rgba(176,138,62,.28);line-height:1;
+  }
+  .quote-box p{margin:0 0 14px;font-size:.95rem;position:relative;z-index:1;}
+  .quote-box cite{font-size:.8rem;color:var(--gold);font-style:normal;letter-spacing:.1em;}
+
+  /* 阅读指南 */
+  .guide{background:var(--paper-2);border-top:1px solid var(--line);}
+  .guide-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;}
+  .guide-card{
+    border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px 22px;background:linear-gradient(180deg,#fbfaf7,#f4f1ea);
+  }
+  .guide-card h4{
+    margin:0 0 12px;font-size:1rem;display:flex;align-items:center;gap:8px;
+  }
+  .guide-card h4::before{
+    content:"";width:8px;height:8px;border-radius:50%;
+    background:var(--accent);flex:none;
+  }
+  .guide-card ul{margin:0;padding-left:18px;font-size:.88rem;color:var(--ink-soft);}
+  .guide-card li{margin-bottom:7px;}
+
+  /* 相关阅读 */
+  .rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;}
+  .rel-card{
+    background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px;transition:.26s;
+  }
+  .rel-card:hover{border-color:var(--accent);box-shadow:var(--shadow);}
+  .rel-card .cat{
+    font-size:.72rem;letter-spacing:.16em;color:var(--accent-2);font-weight:700;
+  }
+  .rel-card h4{margin:8px 0 8px;font-size:1rem;}
+  .rel-card p{margin:0;font-size:.86rem;color:var(--ink-soft);}
+
+  /* FAQ */
+  .faq{background:#ece8e0;border-top:1px solid var(--line);}
+  .faq-list{max-width:860px;}
+  details{
+    background:var(--paper-2);border:1px solid var(--line);
+    border-radius:10px;margin-bottom:12px;padding:0 20px;
+    transition:.2s;
+  }
+  details[open]{border-color:var(--accent);}
+  summary{
+    cursor:pointer;padding:16px 0;font-size:.96rem;font-weight:600;
+    list-style:none;display:flex;justify-content:space-between;gap:14px;
+    align-items:center;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::after{
+    content:"+";color:var(--accent);font-size:1.2rem;flex:none;
+    transition:.2s;
+  }
+  details[open] summary::after{content:"–";}
+  details p{
+    margin:0 0 18px;font-size:.9rem;color:var(--ink-soft);
+  }
+
+  /* 页脚 */
+  footer.site{
+    background:#16202b;color:#a9b6b8;padding:52px 0 26px;font-size:.86rem;
+  }
+  .foot-grid{
+    display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;
+    padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.1);
+  }
+  .foot-grid h4{
+    color:#e8e4dc;font-size:.9rem;margin:0 0 14px;letter-spacing:.1em;
+  }
+  .foot-grid p{margin:0 0 10px;line-height:1.9;}
+  .foot-grid ul{list-style:none;margin:0;padding:0;}
+  .foot-grid li{margin-bottom:9px;}
+  .foot-grid a:hover{color:#e2c98a;}
+  .foot-bottom{
+    padding-top:20px;display:flex;justify-content:space-between;
+    gap:14px;flex-wrap:wrap;font-size:.8rem;color:#7d8b8d;
+  }
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:32px;}
+    .theme-wrap{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:620px){
+    section{padding:46px 0;}
+    .head-inner{padding:18px 0;}
+    nav.mainnav ul{gap:2px;}
+    nav.mainnav a{padding:7px 11px;font-size:.84rem;}
+    .person{grid-template-columns:1fr;gap:12px;}
+    .person .who{border-right:0;border-bottom:1px solid var(--line);padding:0 0 10px;}
+    .foot-grid{grid-template-columns:1fr;gap:26px;}
+    .hero{padding:40px 0 52px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>文学经典 · 反乌托邦专题</span>
+    <span class="tag">阅读与理解指南</span>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap head-inner">
+    <div class="brand">
+      <div class="brand-mark">新</div>
+      <div>
+        <h1>美丽新世界</h1>
+        <p>Brave New World</p>
+      </div>
+    </div>
+    <nav class="mainnav" aria-label="主导航">
+      <ul>
+        <li><a href="#intro">作品概览</a></li>
+        <li><a href="#concepts">核心设定</a></li>
+        <li><a href="#people">人物脉络</a></li>
+        <li><a href="#themes">思想主题</a></li>
+        <li><a href="#guide">阅读指南</a></li>
+        <li><a href="#faq">常见问题</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- 首屏 -->
+  <section class="hero" id="intro">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">反乌托邦文学的坐标之作</span>
+        <h2>当“幸福”被安排妥当，<em>自由</em>还剩下什么？</h2>
+        <p class="lead">
+          《美丽新世界》是英国作家阿道司·赫胥黎创作的长篇小说，描绘了一个以科技手段、等级分工与消费主义维系稳定的社会。
+          它不靠恐惧统治，而是用舒适、娱乐与化学安抚让人主动放弃思考——这正是它长久被讨论的原因。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#concepts">了解核心设定</a>
+          <a class="btn btn-ghost" href="#guide">进入阅读指南</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <h3>作品基本信息</h3>
+        <ul class="factlist">
+          <li><b>作者</b><span>阿道司·赫胥黎（英国）</span></li>
+          <li><b>体裁</b><span>长篇小说 · 反乌托邦 · 科幻</span></li>
+          <li><b>首次出版</b><span>1932 年</span></li>
+          <li><b>叙事视角</b><span>第三人称，多线并行</span></li>
+          <li><b>关键词</b><span>科技、等级、消费、自由、幸福</span></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 核心设定 -->
+  <section id="concepts">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Core Concepts</span>
+        <h3>读懂这部作品，先理解它的几个设定支点</h3>
+        <p>小说构建了一套自洽的社会运行逻辑。理解这些设定，比记住情节更能把握作者的用意。</p>
+      </div>
+      <div class="concept-grid">
+        <article class="concept">
+          <span class="num">01</span>
+          <h4>从出生开始的等级划分</h4>
+          <p>社会成员在孵化阶段被划分为不同等级，并通过技术手段影响其体质与智力倾向，使每个人“恰好适合”被分配的位置。</p>
+        </article>
+        <article class="concept">
+          <span class="num">02</span>
+          <h4>以舒适替代压制的治理</h4>
+          <p>统治不依赖暴力威慑，而是依靠充足的物质、娱乐与情绪调节手段，让不满在产生之前就被消解。</p>
+        </article>
+        <article class="concept">
+          <span class="num">03</span>
+          <h4>被鼓励的即时满足</h4>
+          <p>消费与感官娱乐被塑造成义务，克制与深度思考则被视为不合群，稳定因此得以维持。</p>
+        </article>
+        <article class="concept">
+          <span class="num">04</span>
+          <h4>被排除在外的“异质者”</h4>
+          <p>不适应体系的人被安置在边缘地带，成为这个社会自我确认“正常”的对照物。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 人物 -->
+  <section class="people" id="people">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Characters</span>
+        <h3>几条相互交织的人物线</h3>
+        <p>小说通过不同立场的角色，把“稳定”与“人性”之间的张力逐层展开。</p>
+      </div>
+      <div class="people-list">
+        <article class="person">
+          <div class="who">
+            <strong>伯纳德·马克斯</strong>
+            <small>体系内的不适者</small>
+          </div>
+          <p>他因体质差异而长期感到被排斥，对体系有隐约的不满，但这种不满更多源于自身处境，而非真正的价值反思。</p>
+        </article>
+        <article class="person">
+          <div class="who">
+            <strong>列宁娜·克朗</strong>
+            <small>体系的顺从者</small>
+          </div>
+          <p>她接受并享受被安排的生活方式，她的困惑往往来自情感的自然萌发与既定规范之间的冲突。</p>
+        </article>
+        <article class="person">
+          <div class="who">
+            <strong>赫姆霍尔兹·沃森</strong>
+            <small>有自觉的怀疑者</small>
+          </div>
+          <p>他具备出色的能力，却对语言与表达的可能性感到不满足，是少数能清晰意识到体系局限的人。</p>
+        </article>
+        <article class="person">
+          <div class="who">
+            <strong>约翰</strong>
+            <small>来自边缘地带的闯入者</small>
+          </div>
+          <p>他在保留地长大，带着另一套价值尺度进入“新世界”，他的不适应构成了对整套体系的直接质询。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 主题 -->
+  <section id="themes">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Themes</span>
+        <h3>它真正在讨论的问题</h3>
+        <p>与其把它当作预言，不如把它当作一组关于现代生活的提问。</p>
+      </div>
+      <div class="theme-wrap">
+        <ol class="theme-list">
+          <li>
+            <strong>稳定与自由能否兼得</strong>
+            <span>当秩序被置于最高价值，个体选择的成本就会被不断压缩。</span>
+          </li>
+          <li>
+            <strong>技术进步是否必然带来解放</strong>
+            <span>技术本身中立，但它服务于谁、被用来解决什么问题，决定了结果。</span>
+          </li>
+          <li>
+            <strong>快乐是否可以被“制造”</strong>
+            <span>被安排好的满足，与经过挣扎获得的满足，是否属于同一种东西。</span>
+          </li>
+          <li>
+            <strong>消费主义与自我认同</strong>
+            <span>当身份由消费行为定义，人是否还保有不被市场衡量的部分。</span>
+          </li>
+          <li>
+            <strong>语言与思考的边界</strong>
+            <span>当表达被简化，能被想清楚的事情也随之减少。</span>
+          </li>
+        </ol>
+        <div class="quote-box">
+          <p>这部作品的力量，不在于它预测了什么，而在于它提出的问题至今没有被回答完。</p>
+          <p>它提醒读者：一个社会最需要警惕的，未必是它禁止了什么，而可能是它让人心甘情愿放弃了什么。</p>
+          <cite>—— 关于《美丽新世界》的一种阅读角度</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 阅读指南 -->
+  <section class="guide" id="guide">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Reading Guide</span>
+        <h3>怎样读得更顺、理解得更深</h3>
+        <p>作品开篇信息密度较高，采取一些方法可以显著降低阅读门槛。</p>
+      </div>
+      <div class="guide-grid">
+        <article class="guide-card">
+          <h4>先接受设定，再进入情节</h4>
+          <ul>
+            <li>前几章重在铺陈世界规则，不必急于记住所有名词</li>
+            <li>遇到陌生术语先做标记，随文推进会逐渐清晰</li>
+            <li>把注意力放在“这套规则意味着什么”</li>
+          </ul>
+        </article>
+        <article class="guide-card">
+          <h4>带着问题去读</h4>
+          <ul>
+            <li>这个社会为什么选择用舒适而非强制维持秩序</li>
+            <li>哪些角色真正意识到了问题，哪些只是感到不适</li>
+            <li>作者对科技的态度是反对，还是提醒</li>
+          </ul>
+        </article>
+        <article class="guide-card">
+          <h4>关注叙述方式</h4>
+          <ul>
+            <li>视角在不同角色间切换，注意各自的信息盲区</li>
+            <li>对话中的日常用语，往往透露体系的价值观</li>
+            <li>景物与场景描写常带有反讽意味</li>
+          </ul>
+        </article>
+        <article class="guide-card">
+          <h4>读后延伸</h4>
+          <ul>
+            <li>与其他反乌托邦作品对照阅读，比较治理逻辑差异</li>
+            <li>结合科技伦理、媒介环境等话题进行现实联想</li>
+            <li>记录自己最不认同、又最难反驳的一段</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 相关阅读 -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Related Reading</span>
+        <h3>可以一起读的相关方向</h3>
+        <p>把作品放进更宽的脉络里，理解会更立体。</p>
+      </div>
+      <div class="rel-grid">
+        <article class="rel-card">
+          <span class="cat">同类经典</span>
+          <h4>反乌托邦文学脉络</h4>
+          <p>了解这一类型作品共同关心的议题：权力、技术与个体处境。</p>
+        </article>
+        <article class="rel-card">
+          <span class="cat">思想背景</span>
+          <h4>科技伦理讨论</h4>
+          <p>围绕技术应用边界、人的自主性展开的公共讨论与思考。</p>
+        </article>
+        <article class="rel-card">
+          <span class="cat">作者研究</span>
+          <h4>赫胥黎的其他写作</h4>
+          <p>他的随笔与评论延续了对社会与人性的持续观察。</p>
+        </article>
+        <article class="rel-card">
+          <span class="cat">延伸话题</span>
+          <h4>媒介与注意力</h4>
+          <p>当信息与娱乐高度充裕，专注与思考会面临怎样的处境。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">FAQ</span>
+        <h3>读者常问的几个问题</h3>
+      </div>
+      <div class="faq-list">
+        <details open>
+          <summary>《美丽新世界》适合什么阶段的读者？</summary>
+          <p>它属于经典文学作品，语言并不晦涩，但涉及的社会议题较为复杂。具备一定阅读经验的青少年及成年读者都能读，年龄较小的读者建议在引导下阅读，以便理解其中的反讽与批判意味。</p>
+        </details>
+        <details>
+          <summary>这本书是不是在反对科技发展？</summary>
+          <p>更准确地说，它提醒人们关注技术被如何使用、由谁决定、服务于什么目标。作品批判的不是技术本身，而是以技术手段取消个体判断与选择的做法。</p>
+        </details>
+        <details>
+          <summary>读之前需要了解历史背景吗？</summary>
+          <p>不必预先准备。了解作品诞生于二十世纪三十年代，以及当时对工业化、大众消费与社会组织的讨论，会有助于理解某些设定的由来，但直接进入正文同样可以读懂。</p>
+        </details>
+        <details>
+          <summary>它和其他反乌托邦作品有什么不同？</summary>
+          <p>不同作品设想的控制方式各有侧重：有的强调强制与监视，有的强调舒适与满足。本书的特点在于，它描绘的是一种让人主动配合的秩序，因此读起来往往更令人不安。</p>
+        </details>
+        <details>
+          <summary>应该怎样看待结尾？</summary>
+          <p>结尾的处理方式留有较强的解读空间，不同读者会有不同理解。建议读完后回看约翰与管理者对话的段落，那里集中呈现了作品的核心分歧。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>关于本页</h4>
+        <p>本页是围绕《美丽新世界》整理的阅读参考内容，涵盖作品设定、人物脉络、思想主题与阅读方法，供读者在阅读前后查阅。</p>
+        <p>内容以作品本身为依据，不涉及未经确认的传闻与评价。</p>
+      </div>
+      <div>
+        <h4>内容导航</h4>
+        <ul>
+          <li><a href="#intro">作品概览</a></li>
+          <li><a href="#concepts">核心设定</a></li>
+          <li><a href="#people">人物脉络</a></li>
+          <li><a href="#themes">思想主题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>延伸阅读</h4>
+        <ul>
+          <li><a href="#guide">阅读指南</a></li>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="#themes">主题讨论</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>美丽新世界 · 文学经典阅读参考</span>
+      <span>内容仅供阅读与学习使用</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+  </html>
